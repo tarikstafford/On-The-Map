@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3299BE11EFFFDC300AEB785 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299BE01EFFFDC300AEB785 /* BorderedButton.swift */; };
+		F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299BE21F00185300AEB785 /* TableViewController.swift */; };
 		F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */; };
 		F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533E1EFE953400600749 /* ConvenienceHandler.swift */; };
 		F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F3299BE01EFFFDC300AEB785 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		F3299BE21F00185300AEB785 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		F32C533E1EFE953400600749 /* ConvenienceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandler.swift; sourceTree = "<group>"; };
 		F38CA9B91EE7D933003EF069 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +94,7 @@
 			children = (
 				F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */,
 				F3C4E5E01EFFC309003FD85F /* TabBarController.swift */,
+				F3299BE21F00185300AEB785 /* TableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -101,7 +102,6 @@
 		F38CA9D01EE7D969003EF069 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F3299BE01EFFFDC300AEB785 /* BorderedButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			files = (
 				F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */,
 				F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */,
-				F3299BE11EFFFDC300AEB785 /* BorderedButton.swift in Sources */,
+				F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */,
 				F38CA9D41EE7D9A6003EF069 /* Constants.swift in Sources */,
 				F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */,
 				F3C4E5E11EFFC309003FD85F /* TabBarController.swift in Sources */,

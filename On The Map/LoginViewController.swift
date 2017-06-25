@@ -1,0 +1,120 @@
+//
+//  ViewController.swift
+//  On The Map
+//
+//  Created by Tarik Stafford on 6/7/17.
+//  Copyright © 2017 Udacity Tarik. All rights reserved.
+//
+
+import UIKit
+
+class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    var session: URLSession!
+
+    @IBOutlet weak var usernameField: UITextField!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
+    @IBAction func loginPressed(_ sender: Any) {
+        guard let username = usernameField.text else{
+            print("Invalid Username")
+            return
+        }
+        
+        guard let password = passwordField.text else{
+            print("Invalid Password")
+            return
+        }
+        
+        if isValidEmailAddress(emailAddressString: username) {
+            if password.isEmpty == false {
+                Constants.LoginInformation.username = username
+                Constants.LoginInformation.password = password
+                UdacityClient.sharedInstance().loginFunc() { (success, sessionID, errorString) in
+                    if success {
+                        performUIUpdatesOnMain {
+                            print("LOGGED IN")
+                            print(sessionID ?? "none")
+                            self.completeLogin()
+                        }
+                    } else {
+                        print("LOGIN FAILED")
+                        self.loginFailed()
+                    }
+                }
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        session = URLSession.shared
+        
+        configureBackground()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        usernameField.clearsOnBeginEditing = true
+        passwordField.clearsOnBeginEditing = true
+        
+        passwordField.delegate = self
+    }
+        
+    private func completeLogin(){
+        let controller = storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        present(controller, animated: true, completion: nil)
+    }
+        
+    
+    func loginFailed() {
+        
+    }
+    
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        loginPressed((Any).self)
+        return true
+    }
+    
+    func configureBackground() {
+        let backgroundGradient = CAGradientLayer()
+        let colorTop = UIColor(red: 0.345, green: 0.839, blue: 0.988, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 0.023, green: 0.569, blue: 0.910, alpha: 1.0).cgColor
+        backgroundGradient.colors = [colorTop, colorBottom]
+        backgroundGradient.locations = [0.0, 1.0]
+        backgroundGradient.frame = view.frame
+        view.layer.insertSublayer(backgroundGradient, at: 0)
+    }
+}
+

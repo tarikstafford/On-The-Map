@@ -51,7 +51,7 @@ class UdacityClient: NSObject {
         
     }
     
-    func taskForDeleteMethod(_ completionHandlerForPostMethod: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForDeleteMethod(_ completionHandlerForDeleteMethod: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         let request = NSMutableURLRequest(url: URL(string: Constants.UAPI.SessionMethod)!)
         request.httpMethod = "DELETE"
         var xsrfCookie: HTTPCookie? = nil
@@ -64,12 +64,21 @@ class UdacityClient: NSObject {
         }
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
-            if error != nil { // Handle error…
+            if error != nil {
+                print("DELETE request error type: \(String(describing: error))")
                 return
             }
-            let range = Range(5..<data!.count)
-            let newData = data?.subdata(in: range) /* subset response data! */
-            print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
+            
+            guard let data = data else{
+                print("Data error")
+                return
+            }
+
+            let range = Range(5..<data.count)
+            let newData = data.subdata(in: range) /* subset response data! */
+            print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
+            
+            self.convertDataWithCompletionHandler(newData, completionHandlerForConvertData: completionHandlerForDeleteMethod)
         }
         task.resume()
         

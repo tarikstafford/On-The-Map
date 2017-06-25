@@ -107,7 +107,7 @@
         <!--Root View Controller-->
         <scene sceneID="WZE-mR-ArT">
             <objects>
-                <tableViewController id="r0T-yj-BEZ" sceneMemberID="viewController">
+                <tableViewController id="r0T-yj-BEZ" customClass="TableViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="18D-eW-OV6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="riZ-BU-CTs">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="H6j-S6-3Wr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="H6j-S6-3Wr">
+                            <connections>
+                                <action selector="logOutPressed:" destination="r0T-yj-BEZ" id="FnC-pM-2bn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKM-Rx-hdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
