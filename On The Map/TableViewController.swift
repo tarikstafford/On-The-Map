@@ -24,6 +24,9 @@ class TableViewController: UITableViewController {
             if success{
                 print("DELETE METHOD SUCCESSFUL")
                 Constants.SessionInfo.sessionID = ""
+                if Constants.SessionInfo.isFacebookLogin {
+                    
+                }
                 performUIUpdatesOnMain {
                     print("PERFORMING UI UPDATES")
                     self.dismiss(animated: true, completion: nil)

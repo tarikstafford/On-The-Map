@@ -33,6 +33,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
             return
         }
         
+        if AccessToken.current != nil {
+            facebookAuth()
+        }
+        
         if isValidEmailAddress(emailAddressString: username) {
             if password.isEmpty == false {
                 Constants.LoginInformation.username = username
@@ -46,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                         }
                     } else {
                         print("LOGIN FAILED")
-                        self.loginFailed()
                     }
                 }
             }
@@ -82,10 +85,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         present(controller, animated: true, completion: nil)
     }
         
-    
-    func loginFailed() {
-        
-    }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         

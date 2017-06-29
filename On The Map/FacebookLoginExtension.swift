@@ -15,20 +15,33 @@ extension LoginViewController {
         switch result {
         case .success(grantedPermissions: _, declinedPermissions: _, token: _):
             print("logged in")
-            if let accessToken = AccessToken.current {
-                Constants.SessionInfo.facebookToken = accessToken.authenticationToken
-                Constants.LoginInformation.facebookName = accessToken.userId
-            }
-            completeLogin()
+            facebookAuth()
         case .failed:
             print("Failed Login")
         case .cancelled:
             print("Cancelled")
         }
-        
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print("logged out")
+    }
+    
+    func facebookAuth(){
+        if let accessToken = AccessToken.current {
+            Constants.SessionInfo.facebookToken = accessToken.authenticationToken
+            Constants.LoginInformation.facebookName = accessToken.userId
+        }
+        UdacityClient.sharedInstance().facebookLoginFunc() { (success, session, error) in
+            if success {
+                performUIUpdatesOnMain {
+                    print("LOGGED IN")
+                    print(session ?? "none")
+                    self.completeLogin()
+                }
+            } else {
+                print("LOGIN FAILED")
+            }
+        }
     }
 }

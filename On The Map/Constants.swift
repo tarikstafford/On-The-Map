@@ -24,14 +24,10 @@ struct Constants {
         static var facebookName: String?
     }
     
-    struct FacebookAPI {
-        static var facebookAPI = "365362206864879"
-        static var facebookSchemeURL = "onthemap"
-    }
-    
     struct SessionInfo {
         static var sessionID = ""
         static var facebookToken = ""
+        static var isFacebookLogin: Bool = false
     }
     
     struct StudentData {

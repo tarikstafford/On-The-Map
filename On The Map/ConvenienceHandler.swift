@@ -50,6 +50,41 @@ extension UdacityClient {
     
     }
     
+    func facebookLoginFunc(_ completionHandlerForFacebookLoginFunc: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?) -> Void) {
+        let _ = taskForPostFacebookSession(){ (results, error) in
+            if let error = error{
+                print(error)
+                completionHandlerForFacebookLoginFunc(false, nil, "Udacity/Facebook Login Failed")
+            } else if let results = results {
+                //Check Acct Info
+                guard let account = results["account"] as? [String:AnyObject] else {
+                    print("There is an problem with your account information.")
+                    return
+                }
+                //Get Key
+                guard let uniqueKey = account["key"] as? String else {
+                    print("There is a problem with your user ID.")
+                    return
+                }
+                //Get Session Info
+                guard let sessionInfo = results["session"] as? [String:AnyObject] else {
+                    print("There is a problem with your session dictionary.")
+                    return
+                }
+                //Get Session ID
+                guard let session = sessionInfo["id"] as? String else {
+                    print("There is a problem with your session ID.")
+                    return
+                }
+                
+                Constants.SessionInfo.sessionID = session
+                Constants.LoginInformation.uniqueKey = uniqueKey
+                
+                completionHandlerForFacebookLoginFunc(true, session, nil)
+            }
+        }
+    }
+    
     func logOutFunc(_ completionHandlerForLogOut: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?) -> Void) {
         
         let _ = taskForDeleteMethod() { (results, error) in
