@@ -50,29 +50,31 @@ extension UdacityClient {
     
     }
     
-        func logOutFunc(_ completionHandlerForLogOut: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?) -> Void) {
-            
-            let _ = taskForDeleteMethod() { (results, error) in
-                if let error = error {
-                    print(error)
-                    completionHandlerForLogOut(false, nil, "LogOut Failed.")
-                } else if let results = results {
-                    
-                    //Get Session Info
-                    guard let sessionInfo = results["session"] as? [String:AnyObject] else {
-                        print("There is a problem with your session dictionary.")
-                        return
-                    }
-                    //Get Session ID
-                    guard let session = sessionInfo["id"] as? String else {
-                        print("There is a problem with your session ID.")
-                        return
-                    }
-                    
-                    completionHandlerForLogOut(true, session, nil)
-                    
-                    
+    func logOutFunc(_ completionHandlerForLogOut: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?) -> Void) {
+        
+        let _ = taskForDeleteMethod() { (results, error) in
+            if let error = error {
+                print(error)
+                completionHandlerForLogOut(false, nil, "LogOut Failed.")
+            } else if let results = results {
+                
+                //Get Session Info
+                guard let sessionInfo = results["session"] as? [String:AnyObject] else {
+                    print("There is a problem with your session dictionary.")
+                    return
                 }
+                //Get Session ID
+                guard let session = sessionInfo["id"] as? String else {
+                    print("There is a problem with your session ID.")
+                    return
+                }
+                
+                completionHandlerForLogOut(true, session, nil)
+                
+                
             }
+        }
     }
+    
+//    func fetchUserData(_ completionHandlerForFetchUserData: @escaping (_ success: Bool,_ ))
 }

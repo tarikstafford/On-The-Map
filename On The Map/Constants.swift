@@ -21,10 +21,17 @@ struct Constants {
         static var password = ""
         static var uniqueKey = ""
         static var loggedIn: Bool = false
+        static var facebookName: String?
+    }
+    
+    struct FacebookAPI {
+        static var facebookAPI = "365362206864879"
+        static var facebookSchemeURL = "onthemap"
     }
     
     struct SessionInfo {
         static var sessionID = ""
+        static var facebookToken = ""
     }
     
     struct StudentData {

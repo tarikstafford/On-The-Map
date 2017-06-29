@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98F93DE6F19A1C849EF45AC9 /* Pods_On_The_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */; };
 		F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299BE21F00185300AEB785 /* TableViewController.swift */; };
 		F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */; };
 		F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533E1EFE953400600749 /* ConvenienceHandler.swift */; };
+		F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */; };
 		F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */; };
 		F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */; };
 		F38CA9C21EE7D933003EF069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38CA9C01EE7D933003EF069 /* Main.storyboard */; };
@@ -22,9 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77A69B4E224299AEEA54BA95 /* Pods-On The Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.release.xcconfig"; sourceTree = "<group>"; };
+		86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_The_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90EA61BEBFEC306C1602761 /* Pods-On The Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.debug.xcconfig"; sourceTree = "<group>"; };
 		F3299BE21F00185300AEB785 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		F32C533E1EFE953400600749 /* ConvenienceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandler.swift; sourceTree = "<group>"; };
+		F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginExtension.swift; sourceTree = "<group>"; };
 		F38CA9B91EE7D933003EF069 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +39,7 @@
 		F38CA9C61EE7D933003EF069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38CA9C81EE7D933003EF069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38CA9D31EE7D9A6003EF069 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F3995F341F03F93A00D40C03 /* On The Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "On The Map.entitlements"; sourceTree = "<group>"; };
 		F3C4E5E01EFFC309003FD85F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F3D16BD31EF2E179004D498B /* GetStudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStudentLocation.swift; sourceTree = "<group>"; };
 		F3D16BD81EF2E268004D498B /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
@@ -43,17 +50,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98F93DE6F19A1C849EF45AC9 /* Pods_On_The_Map.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1916213BAE80C21D8223232B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A90EA61BEBFEC306C1602761 /* Pods-On The Map.debug.xcconfig */,
+				77A69B4E224299AEEA54BA95 /* Pods-On The Map.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B60E2AD938411176F0DA095B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F38CA9B01EE7D933003EF069 = {
 			isa = PBXGroup;
 			children = (
 				F38CA9BB1EE7D933003EF069 /* On The Map */,
 				F38CA9BA1EE7D933003EF069 /* Products */,
+				1916213BAE80C21D8223232B /* Pods */,
+				B60E2AD938411176F0DA095B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +95,7 @@
 		F38CA9BB1EE7D933003EF069 /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				F3995F341F03F93A00D40C03 /* On The Map.entitlements */,
 				F38CA9D21EE7D997003EF069 /* Constants */,
 				F38CA9D11EE7D97D003EF069 /* Model */,
 				F38CA9CE1EE7D94F003EF069 /* App Files */,
@@ -93,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */,
+				F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */,
 				F3C4E5E01EFFC309003FD85F /* TabBarController.swift */,
 				F3299BE21F00185300AEB785 /* TableViewController.swift */,
 			);
@@ -156,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F38CA9CB1EE7D933003EF069 /* Build configuration list for PBXNativeTarget "On The Map" */;
 			buildPhases = (
+				736B99A25DA5229F02A0C4E8 /* [CP] Check Pods Manifest.lock */,
 				F38CA9B51EE7D933003EF069 /* Sources */,
 				F38CA9B61EE7D933003EF069 /* Frameworks */,
 				F38CA9B71EE7D933003EF069 /* Resources */,
+				1E73899DB8D5492CE9A0A904 /* [CP] Embed Pods Frameworks */,
+				6BF320BB05F990C4FF8160E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,7 +213,13 @@
 				TargetAttributes = {
 					F38CA9B81EE7D933003EF069 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZASS9N32P9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -216,12 +254,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E73899DB8D5492CE9A0A904 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On The Map/Pods-On The Map-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF320BB05F990C4FF8160E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On The Map/Pods-On The Map-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		736B99A25DA5229F02A0C4E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F38CA9B51EE7D933003EF069 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */,
+				F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */,
 				F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */,
 				F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */,
 				F38CA9D41EE7D9A6003EF069 /* Constants.swift in Sources */,
@@ -352,8 +439,11 @@
 		};
 		F38CA9CC1EE7D933003EF069 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90EA61BEBFEC306C1602761 /* Pods-On The Map.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "On The Map/On The Map.entitlements";
+				DEVELOPMENT_TEAM = ZASS9N32P9;
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tarikstafford.On-The-Map";
@@ -364,8 +454,11 @@
 		};
 		F38CA9CD1EE7D933003EF069 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A69B4E224299AEEA54BA95 /* Pods-On The Map.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "On The Map/On The Map.entitlements";
+				DEVELOPMENT_TEAM = ZASS9N32P9;
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tarikstafford.On-The-Map";

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDelegate {
+
     var session: URLSession!
-
+    
+    
     @IBOutlet weak var usernameField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
@@ -55,7 +58,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         session = URLSession.shared
         
-        configureBackground()
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
+        view.addSubview(loginButton)
+        
+        loginButton.delegate = self
+        
         
     }
     
@@ -68,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
     }
         
-    private func completeLogin(){
+    func completeLogin(){
         let controller = storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         present(controller, animated: true, completion: nil)
     }
