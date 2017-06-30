@@ -24,17 +24,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     
     @IBAction func loginPressed(_ sender: Any) {
         guard let username = usernameField.text else{
-            print("Invalid Username")
             return
         }
         
         guard let password = passwordField.text else{
-            print("Invalid Password")
             return
-        }
-        
-        if AccessToken.current != nil {
-            facebookAuth()
         }
         
         if isValidEmailAddress(emailAddressString: username) {
@@ -44,7 +38,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                 UdacityClient.sharedInstance().loginFunc() { (success, sessionID, errorString) in
                     if success {
                         performUIUpdatesOnMain {
-                            print("LOGGED IN")
                             print(sessionID ?? "none")
                             self.completeLogin()
                         }
@@ -60,6 +53,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         super.viewDidLoad()
         
         session = URLSession.shared
+        
+        if (AccessToken.current != nil) {
+            facebookAuth()
+        }
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)

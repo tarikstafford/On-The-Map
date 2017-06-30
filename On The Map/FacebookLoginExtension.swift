@@ -24,7 +24,7 @@ extension LoginViewController {
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        print("logged out")
+        logOut()
     }
     
     func facebookAuth(){
@@ -41,6 +41,26 @@ extension LoginViewController {
                 }
             } else {
                 print("LOGIN FAILED")
+            }
+        }
+    }
+    
+    func logOut() {
+        UdacityClient.sharedInstance().logOutFunc() { (success, results, error) in
+            
+            if success{
+                print("DELETE METHOD SUCCESSFUL")
+                Constants.SessionInfo.sessionID = ""
+                if Constants.SessionInfo.isFacebookLogin {
+                    
+                }
+                performUIUpdatesOnMain {
+                    print("PERFORMING UI UPDATES")
+                    self.dismiss(animated: true, completion: nil)
+                    let loginViewController = LoginViewController()
+                    self.present(loginViewController, animated: true, completion: nil)
+                }
+                
             }
         }
     }

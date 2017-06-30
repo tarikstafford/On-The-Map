@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
 
 class TableViewController: UITableViewController {
-    
-    @IBAction func logOutPressed(_ sender: Any) {
-        logOut()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        if AccessToken.current != nil {
+            LoginManager().logOut()
+            logOut()
+        } else {
+            logOut()
+        }
+    }
+
     
     func logOut() {
         UdacityClient.sharedInstance().logOutFunc() { (success, results, error) in
