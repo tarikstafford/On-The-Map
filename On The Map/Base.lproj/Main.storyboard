@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="kot-t7-LK0">
             <objects>
-                <viewController id="g3x-OR-D7B" sceneMemberID="viewController">
+                <viewController id="g3x-OR-D7B" customClass="MapViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="99z-gN-JhC">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="dkz-MD-lSU"/>
                     </navigationItem>

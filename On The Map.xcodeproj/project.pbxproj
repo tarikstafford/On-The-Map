@@ -12,6 +12,7 @@
 		F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */; };
 		F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533E1EFE953400600749 /* ConvenienceHandler.swift */; };
 		F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */; };
+		F32DA69F1F063A0100B94515 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32DA69E1F063A0100B94515 /* MapViewController.swift */; };
 		F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */; };
 		F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */; };
 		F38CA9C21EE7D933003EF069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38CA9C01EE7D933003EF069 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		F32C533E1EFE953400600749 /* ConvenienceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandler.swift; sourceTree = "<group>"; };
 		F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginExtension.swift; sourceTree = "<group>"; };
+		F32DA69E1F063A0100B94515 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F38CA9B91EE7D933003EF069 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */,
 				F3C4E5E01EFFC309003FD85F /* TabBarController.swift */,
 				F3299BE21F00185300AEB785 /* TableViewController.swift */,
+				F32DA69E1F063A0100B94515 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32DA69F1F063A0100B94515 /* MapViewController.swift in Sources */,
 				F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */,
 				F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */,
 				F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */,

@@ -86,7 +86,7 @@ class UdacityClient: NSObject {
     }
     
     func taskForGetMethod(_ completionHandlerForGetMethod: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
-        let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/users/3903878747")!)
+        let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/users/\(Constants.LoginInformation.uniqueKey)")!)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             if error != nil {
