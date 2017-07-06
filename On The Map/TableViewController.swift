@@ -12,8 +12,16 @@ import FacebookCore
 
 class TableViewController: UITableViewController {
     
+    var studentDataArray = [StudentData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ParseClient.sharedInstance().populateTable() { (success, arrayStudentData, error) in
+            if success{
+                self.studentDataArray = arrayStudentData!
+            }
+        }
     }
     
     @IBAction func logOutPressed(_ sender: Any) {

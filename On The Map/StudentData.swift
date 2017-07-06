@@ -10,21 +10,28 @@ import Foundation
 
 struct StudentData {
     
-    static var createdAt = ""
-    static var firstName = ""
-    static var lastName = ""
-    static var latitude = 34.7303688
-    static var longitude = -86.5861037
-    static var mapString = ""
-    static var mediaURL = ""
-    static var objectId = ""
-    static var uniqueKey = ""
-    static var updatedAt = ""
+    let createdAt: String?
+    let firstName: String?
+    let lastName: String?
+    let latitude: Double?
+    let longitude: Double?
+    let mapString: String?
+    let mediaURL: String?
+    let objectId: String?
+    let uniqueKey: String?
+    let updatedAt: String?
     
-    
-    
-    
-    
-    
+    init(createdAt: String?, firstName: String?, lastName: String?, latitude: Double?, longitude: Double?, mapString: String?, mediaURL: String?, objectId: String?, uniqueKey: String?, updatedAt: String?) {
+        self.createdAt = createdAt
+        self.firstName = firstName
+        self.lastName = lastName
+        self.latitude = latitude
+        self.longitude = longitude
+        self.mapString = mapString
+        self.mediaURL = mediaURL
+        self.objectId = objectId
+        self.uniqueKey = uniqueKey
+        self.updatedAt = updatedAt
+    }
     
 }

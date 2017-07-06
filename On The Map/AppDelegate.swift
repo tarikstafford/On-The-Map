@@ -15,6 +15,7 @@ import FacebookShare
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var studentDataObjectArray = [StudentData]()
     
     var sharedSession = URLSession.shared
     var requestToken: String? = nil
