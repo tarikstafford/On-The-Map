@@ -53,6 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         super.viewDidLoad()
         
         session = URLSession.shared
+        configureBackground()
         
         if (AccessToken.current != nil) {
             facebookAuth()
@@ -110,16 +111,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         textField.resignFirstResponder()
         loginPressed((Any).self)
         return true
-    }
-    
-    func configureBackground() {
-        let backgroundGradient = CAGradientLayer()
-        let colorTop = UIColor(red: 0.345, green: 0.839, blue: 0.988, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 0.023, green: 0.569, blue: 0.910, alpha: 1.0).cgColor
-        backgroundGradient.colors = [colorTop, colorBottom]
-        backgroundGradient.locations = [0.0, 1.0]
-        backgroundGradient.frame = view.frame
-        view.layer.insertSublayer(backgroundGradient, at: 0)
     }
 }
 
