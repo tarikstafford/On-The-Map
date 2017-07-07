@@ -111,5 +111,31 @@ extension UdacityClient {
         }
     }
     
-//    func fetchUserData(_ completionHandlerForFetchUserData: @escaping (_ success: Bool,_ ))
+    func fetchUserData(_ completionHandlerForFetchUserData: @escaping (_ success: Bool,_ errorString: String?) -> Void) {
+        
+        let _ = taskForGetMethod() { (results, error) in
+            if let error = error {
+                print(error)
+                completionHandlerForFetchUserData(false, "Failed to fetch User Data Udacity API")
+            } else if let results = results {
+                guard let userInfo = results["user"]  as? [String:AnyObject?] else {
+                    print("user Info Not available")
+                    return
+                }
+                
+                guard let firstName = userInfo["first_name"] as? String else {
+                    return
+                }
+                guard let secondName = userInfo["last_name"] as? String else {
+                    return
+                }
+                
+                Constants.myStudentData.firstName = firstName
+                Constants.myStudentData.secondName = secondName
+                
+                completionHandlerForFetchUserData(true, nil)
+            }
+            
+        }
+    }
 }

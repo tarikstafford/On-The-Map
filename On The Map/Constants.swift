@@ -17,11 +17,12 @@ struct Constants {
     
     //Login Data
     struct LoginInformation {
-        static var username = ""
-        static var password = ""
-        static var uniqueKey = ""
+        
         static var loggedIn: Bool = false
         static var facebookName: String?
+        static var uniqueKey = ""
+        static var username = ""
+        static var password = ""
     }
     
     struct SessionInfo {
@@ -30,8 +31,13 @@ struct Constants {
         static var isFacebookLogin: Bool = false
     }
     
-    struct StudentData {
-        static var studentInformation = [[String:AnyObject]]()
+    struct myStudentData {
+        static var firstName = ""
+        static var secondName = ""
+        static var mapString = ""
+        static var latitude = ""
+        static var longitude = ""
+        static var mediaLink = ""
     }
     
     struct Parse {

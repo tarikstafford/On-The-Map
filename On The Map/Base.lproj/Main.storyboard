@@ -75,11 +75,11 @@
             </objects>
             <point key="canvasLocation" x="-970" y="-313"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="Itb-ek-9Bq">
             <objects>
                 <navigationController id="TpM-Gr-One" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="A5z-Qx-CMF"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="A5z-Qx-CMF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="13D-5e-PI5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,11 +159,11 @@
             </objects>
             <point key="canvasLocation" x="778" y="-1059"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="yhM-lp-dhW">
             <objects>
                 <navigationController id="Fy1-gt-K33" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uj0-Qh-0iQ"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="uj0-Qh-0iQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EBq-4b-2bJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -178,6 +178,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
     </resources>
 </document>

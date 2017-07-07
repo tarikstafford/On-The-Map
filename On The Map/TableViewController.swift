@@ -38,11 +38,11 @@ class TableViewController: UITableViewController {
             if success{
                 if let tempArray = arrayStudentData {
                     self.studentDataArray = self.studentDataArray + tempArray
-                    self.pageLoad = self.pageLoad + 40
-                    self.loadingData = false
                     performUIUpdatesOnMain {
                         self.tableView?.reloadData()
                     }
+                    self.loadingData = false
+                    self.pageLoad = self.pageLoad + 40
                 }
             }
         }
