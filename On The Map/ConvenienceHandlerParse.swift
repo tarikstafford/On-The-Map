@@ -10,9 +10,9 @@ import Foundation
 
 extension ParseClient {
     
-    func populateTable(_ completionHandlerForPopulateTable: @escaping (_ success: Bool, _ arrayStudentData: [StudentData]?, _ errorString: String?) -> Void) {
+    func populateTable(_ skip: Int, _ completionHandlerForPopulateTable: @escaping (_ success: Bool, _ arrayStudentData: [StudentData]?, _ errorString: String?) -> Void) {
         
-        let _ = taskForGetMethod() { (results, error) in
+        let _ = taskForGetMethod(skip) { (results, error) in
             
             if error != nil {
                 print(error!)

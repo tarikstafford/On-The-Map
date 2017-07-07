@@ -13,16 +13,15 @@ import FacebookCore
 class TableViewController: UITableViewController {
     
     var studentDataArray = [StudentData]()
+    var loadingData = false
+    var pageLoad = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
     
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
@@ -35,14 +34,15 @@ class TableViewController: UITableViewController {
     }
 
     func loadData() {
-        ParseClient.sharedInstance().populateTable() { (success, arrayStudentData, error) in
+        ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
             if success{
                 if let tempArray = arrayStudentData {
-                    self.studentDataArray = tempArray
+                    self.studentDataArray = self.studentDataArray + tempArray
+                    self.pageLoad = self.pageLoad + 40
+                    self.loadingData = false
                     performUIUpdatesOnMain {
                         self.tableView?.reloadData()
                     }
-                    print(self.studentDataArray.count)
                 }
             }
         }
@@ -68,6 +68,7 @@ class TableViewController: UITableViewController {
         }
     }
     
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -77,10 +78,17 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let lastElement = studentDataArray.count - 1
+        if !loadingData && indexPath.row == lastElement {
+            loadingData = true
+            loadData()
+        }
+        
         let object = studentDataArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         cell.textLabel?.text = object.firstName
         cell.detailTextLabel?.text = object.mediaURL
+        
         
         return cell
     }

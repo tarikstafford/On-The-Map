@@ -16,8 +16,9 @@ class ParseClient: NSObject {
         super.init()
     }
     
-    func taskForGetMethod(_ completionForGetMethod: @escaping (_ result: AnyObject?,_ error: NSError?) -> Void) -> URLSessionTask{
-        let request = NSMutableURLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation" + "?limit=10")!)
+    func taskForGetMethod(_ skip: Int,_ completionForGetMethod: @escaping (_ result: AnyObject?,_ error: NSError?) -> Void) -> URLSessionTask{
+        
+        let request = NSMutableURLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation" + "?limit=40" + "&skip=\(skip)")!)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = URLSession.shared
