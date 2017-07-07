@@ -104,21 +104,41 @@
             </objects>
             <point key="canvasLocation" x="777" y="72"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Student List-->
         <scene sceneID="WZE-mR-ArT">
             <objects>
-                <tableViewController id="r0T-yj-BEZ" customClass="TableViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="r0T-yj-BEZ" customClass="TableViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="18D-eW-OV6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gVE-91-E7h">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" textLabel="AzV-vZ-J7b" detailTextLabel="2FD-Ig-Zfn" imageView="Y3N-X3-4BK" style="IBUITableViewCellStyleSubtitle" id="gVE-91-E7h">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVE-91-E7h" id="ha8-l0-8wq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AzV-vZ-J7b">
+                                            <rect key="frame" x="54" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2FD-Ig-Zfn">
+                                            <rect key="frame" x="54" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_pin" id="Y3N-X3-4BK">
+                                            <rect key="frame" x="15" y="9" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -127,7 +147,7 @@
                             <outlet property="delegate" destination="r0T-yj-BEZ" id="8Hw-yc-u4o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="riZ-BU-CTs">
+                    <navigationItem key="navigationItem" title="Student List" id="riZ-BU-CTs">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="H6j-S6-3Wr">
                             <connections>
                                 <action selector="logOutPressed:" destination="r0T-yj-BEZ" id="FnC-pM-2bn"/>
@@ -157,4 +177,7 @@
             <point key="canvasLocation" x="-66" y="-1059"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_pin" width="24" height="24"/>
+    </resources>
 </document>

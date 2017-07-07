@@ -165,6 +165,7 @@
 			children = (
 				F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */,
 				F38CA9D31EE7D9A6003EF069 /* Constants.swift */,
+				F36F695B1F0D2315004E8EDE /* StudentData.swift */,
 				F3D16BD71EF2E1EC004D498B /* Udacity API */,
 				F3D16BD61EF2E1E5004D498B /* Parse API */,
 			);
@@ -176,7 +177,6 @@
 			children = (
 				F3D16BD31EF2E179004D498B /* ParseClient.swift */,
 				F36F69571F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift */,
-				F36F695B1F0D2315004E8EDE /* StudentData.swift */,
 			);
 			name = "Parse API";
 			sourceTree = "<group>";

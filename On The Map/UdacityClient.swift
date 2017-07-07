@@ -30,6 +30,11 @@ class UdacityClient: NSObject {
                 return
             }
             
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print("Your request returned a status code other than 2xx!")
+                return
+            }
+            
             guard let data = data else{
                 print("Data error")
                 return
@@ -69,6 +74,11 @@ class UdacityClient: NSObject {
                 return
             }
             
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print("Your request returned a status code other than 2xx!")
+                return
+            }
+            
             guard let data = data else{
                 print("Data error")
                 return
@@ -91,6 +101,11 @@ class UdacityClient: NSObject {
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             if error != nil {
                 print("GET request error type: \(String(describing: error))")
+                return
+            }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print("Your request returned a status code other than 2xx!")
                 return
             }
             
@@ -124,6 +139,12 @@ class UdacityClient: NSObject {
                 print("Facebook Udacity Post Method Error")
                 return
             }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print("Your request returned a status code other than 2xx!")
+                return
+            }
+            
             guard let data = data else{
                 print("Data error")
                 return
