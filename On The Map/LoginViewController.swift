@@ -79,12 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     }
         
     func completeLogin(){
-        UdacityClient.sharedInstance().fetchUserData() { (success, error) in
-            if error != nil {
-                print(error ?? "User Info Not Retrieved")
-                return
-            }
-        }
+
         let controller = storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         present(controller, animated: true, completion: nil)
     }

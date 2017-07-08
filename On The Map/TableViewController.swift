@@ -19,11 +19,8 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadData()
         
-        print(Constants.myStudentData.firstName)
-    
     }
     
     @IBAction func logOutPressed(_ sender: Any) {

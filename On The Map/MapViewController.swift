@@ -13,11 +13,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        loadData(createAnnotationArray(_:_:))
         
-        performUIUpdatesOnMain {
-            self.mapView.addAnnotations(self.annotationArray)
-        }
     }
     
     @IBOutlet weak var mapView: MKMapView!
@@ -28,17 +25,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var loadingData = false
     var pageLoad = 0
     
-    func loadData() {
+    func loadData(_ completionHandlerForLoadData: @escaping (_ result: [StudentData],_ error: String?) -> Void) {
         ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
             if success{
-                if let tempArray = arrayStudentData {
-                    self.studentDataArray = self.studentDataArray + tempArray
-                    self.loadingData = false
-                    self.pageLoad = self.pageLoad + 100
+                if let studentDataArray = arrayStudentData {
+                    completionHandlerForLoadData(studentDataArray,nil)
                 }
             }
         }
-        
+    }
+    
+    func createAnnotationArray(_ studentDataArray: [StudentData],_ error: String?) {
         for object in studentDataArray {
             
             let coordinate = CLLocationCoordinate2D(latitude: object.latitude, longitude: object.longitude)
@@ -49,8 +46,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             
         }
+        
+        self.mapView.addAnnotations(annotationArray)
     }
-    
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
