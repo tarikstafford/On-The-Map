@@ -21,6 +21,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadData()
+        
+        print(Constants.myStudentData.firstName)
     
     }
     

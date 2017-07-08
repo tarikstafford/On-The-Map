@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="g3x-OR-D7B" kind="relationship" relationship="rootViewController" id="cal-88-6bj"/>
+                        <segue destination="3gk-ew-qrM" kind="relationship" relationship="rootViewController" id="SHu-cx-zeZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNc-p5-8WE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,16 +93,32 @@
             <point key="canvasLocation" x="1" y="72"/>
         </scene>
         <!--Map View Controller-->
-        <scene sceneID="kot-t7-LK0">
+        <scene sceneID="0zw-1G-Kfh">
             <objects>
-                <viewController id="g3x-OR-D7B" customClass="MapViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="99z-gN-JhC">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="dkz-MD-lSU"/>
-                    </navigationItem>
+                <viewController id="3gk-ew-qrM" customClass="MapViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yob-3H-QDy"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZI7-UN-gBP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9p6-th-zeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-v8-5eO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hmo-P4-im0"/>
+                    <connections>
+                        <outlet property="mapView" destination="f2G-v8-5eO" id="78m-hw-BZ6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JhM-dM-P6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfN-zu-4pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="72"/>
+            <point key="canvasLocation" x="776.79999999999995" y="71.514242878560722"/>
         </scene>
         <!--Student List-->
         <scene sceneID="WZE-mR-ArT">
