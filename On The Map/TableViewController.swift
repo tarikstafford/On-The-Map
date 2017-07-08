@@ -44,7 +44,7 @@ class TableViewController: UITableViewController {
                         self.tableView?.reloadData()
                     }
                     self.loadingData = false
-                    self.pageLoad = self.pageLoad + 40
+                    self.pageLoad = self.pageLoad + 100
                 }
             }
         }

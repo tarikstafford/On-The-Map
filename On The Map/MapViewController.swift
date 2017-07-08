@@ -34,27 +34,27 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 if let tempArray = arrayStudentData {
                     self.studentDataArray = self.studentDataArray + tempArray
                     self.loadingData = false
-                    self.pageLoad = self.pageLoad + 40
+                    self.pageLoad = self.pageLoad + 100
                 }
             }
         }
         
         for object in studentDataArray {
-            if let lat = object.latitude, let long = object.longitude, let media = object.mediaURL {
-                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                
-                let pin = PinAnnotation(title: object.firstName , subtitle: media, coordinate: coordinate)
-                
-                annotationArray.append(pin)
-                
-            }
+            
+            let coordinate = CLLocationCoordinate2D(latitude: object.latitude, longitude: object.longitude)
+            
+            let pin = PinAnnotation(title: object.firstName , subtitle: object.mediaURL, coordinate: coordinate)
+            
+            annotationArray.append(pin)
+            
+            
         }
     }
     
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
+        
         let reuseId = "pin"
         
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView

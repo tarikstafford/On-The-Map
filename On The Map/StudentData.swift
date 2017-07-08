@@ -10,28 +10,28 @@ import Foundation
 
 struct StudentData {
     
-    let createdAt: String?
+    let createdAt: String
     let firstName: String
     let lastName: String
-    let latitude: Double?
-    let longitude: Double?
-    let mapString: String?
-    let mediaURL: String?
-    let objectId: String?
-    let uniqueKey: String?
-    let updatedAt: String?
+    let latitude: Double
+    let longitude: Double
+    let mapString: String
+    let mediaURL: String
+    let objectId: String
+    let uniqueKey: String
+    let updatedAt: String
     
-    init(createdAt: String?, firstName: String, lastName: String, latitude: Double, longitude: Double, mapString: String?, mediaURL: String?, objectId: String?, uniqueKey: String?, updatedAt: String?) {
-        self.createdAt = createdAt
-        self.firstName = firstName
-        self.lastName = lastName
-        self.latitude = latitude
-        self.longitude = longitude
-        self.mapString = mapString
-        self.mediaURL = mediaURL
-        self.objectId = objectId
-        self.uniqueKey = uniqueKey
-        self.updatedAt = updatedAt
+    init(json: [String:Any]) {
+        createdAt = json["createdAt"] as? String ?? ""
+        firstName = json["firstName"] as? String ?? ""
+        lastName = json["lastName"] as? String ?? ""
+        latitude = json["latitude"] as? Double ?? 28.2011
+        longitude = json["longitude"] as? Double ?? 83.9451
+        mapString = json["mapString"] as? String ?? ""
+        mediaURL = json["mediaURL"] as? String ?? ""
+        objectId = json["objectId"] as? String ?? ""
+        uniqueKey = json["uniqueKey"] as? String ?? ""
+        updatedAt = json["updatedAt"] as? String ?? ""
     }
     
 }
