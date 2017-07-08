@@ -21,7 +21,7 @@ struct StudentData {
     let uniqueKey: String
     let updatedAt: String
     
-    init(json: [String:Any]) {
+    init(json: [String:AnyObject?]) {
         createdAt = json["createdAt"] as? String ?? ""
         firstName = json["firstName"] as? String ?? ""
         lastName = json["lastName"] as? String ?? ""
