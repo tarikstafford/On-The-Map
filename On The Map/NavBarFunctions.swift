@@ -31,11 +31,9 @@ extension UIViewController {
     }
     
     func addYourPost(){
-        
-        
-        
-        
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PostPin") as! PostPinViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

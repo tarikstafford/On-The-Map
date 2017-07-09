@@ -16,6 +16,9 @@ class TableViewController: UITableViewController {
     var loadingData = false
     var pageLoad = 0
 
+    @IBAction func postPin(_ sender: Any) {
+        addYourPost()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
