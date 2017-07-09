@@ -21,6 +21,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBAction func signUpButton(_ sender: Any) {
+        let url = URL(string: "https://www.udacity.com/account/auth#!/signup")
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+    }
     
     @IBAction func loginPressed(_ sender: Any) {
         guard let username = usernameField.text else{
@@ -53,7 +59,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         super.viewDidLoad()
         
         session = URLSession.shared
-        configureBackground()
         
         if (AccessToken.current != nil) {
             facebookAuth()

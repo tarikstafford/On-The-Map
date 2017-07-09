@@ -19,6 +19,10 @@ class TableViewController: UITableViewController {
     @IBAction func postPin(_ sender: Any) {
         addYourPost()
     }
+    @IBAction func refreshData(_ sender: Any) {
+        studentDataArray = []
+        loadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

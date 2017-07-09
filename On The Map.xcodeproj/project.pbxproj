@@ -14,7 +14,6 @@
 		F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */; };
 		F32DA69F1F063A0100B94515 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32DA69E1F063A0100B94515 /* MapViewController.swift */; };
 		F36F69581F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F69571F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift */; };
-		F36F695A1F0D0CD3004E8EDE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F69591F0D0CD3004E8EDE /* LoginView.swift */; };
 		F36F695C1F0D2315004E8EDE /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F695B1F0D2315004E8EDE /* StudentData.swift */; };
 		F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */; };
 		F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BE1EE7D933003EF069 /* LoginViewController.swift */; };
@@ -42,7 +41,6 @@
 		F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginExtension.swift; sourceTree = "<group>"; };
 		F32DA69E1F063A0100B94515 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F36F69571F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandlerParse.swift; sourceTree = "<group>"; };
-		F36F69591F0D0CD3004E8EDE /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F36F695B1F0D2315004E8EDE /* StudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		F38CA9B91EE7D933003EF069 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 		F38CA9D01EE7D969003EF069 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F36F69591F0D0CD3004E8EDE /* LoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				F3C020331F122D4800FBDC19 /* PostPinViewController.swift in Sources */,
 				F36F695C1F0D2315004E8EDE /* StudentData.swift in Sources */,
 				F3D16BD91EF2E268004D498B /* UdacityClient.swift in Sources */,
-				F36F695A1F0D0CD3004E8EDE /* LoginView.swift in Sources */,
 				F3D16BD41EF2E179004D498B /* ParseClient.swift in Sources */,
 				F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */,
 			);

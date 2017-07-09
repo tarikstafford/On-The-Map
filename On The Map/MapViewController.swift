@@ -19,6 +19,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBAction func refreshData(_ sender: Any) {
+        studentDataArray = []
+        annotationArray = []
+        loadData(createAnnotationArray(_:_:))
+    }
+    
     @IBAction func postPin(_ sender: Any) {
         addYourPost()
     }
