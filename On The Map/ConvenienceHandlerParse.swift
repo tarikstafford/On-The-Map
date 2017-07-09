@@ -41,9 +41,23 @@ extension ParseClient {
         }
     }
     
-    
-    
-    
-    
-    
+    func postPinToMap(_ completionHandlerForPostPinToMap: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+        
+        let _ = taskForPostMethod() { (results, error) in
+            
+            if error != nil {
+                print(error!)
+                completionHandlerForPostPinToMap(false, "Post Failed")
+            } else if let results = results as? [String:AnyObject] {
+                
+                if let objectId = results["objectId"] as? String {
+                    Constants.myStudentData.objectId = objectId
+                } else {
+                    return
+                }
+                
+                completionHandlerForPostPinToMap(true, nil)
+            }
+        }
+    }
 }

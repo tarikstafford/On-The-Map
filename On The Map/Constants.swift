@@ -35,9 +35,10 @@ struct Constants {
         static var firstName = ""
         static var secondName = ""
         static var mapString = ""
-        static var latitude = ""
-        static var longitude = ""
+        static var latitude = 0.0
+        static var longitude = 0.0
         static var mediaLink = ""
+        static var objectId = ""
     }
     
     struct Parse {

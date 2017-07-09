@@ -12,14 +12,37 @@ import CoreLocation
 
 class ShareLocationViewController: UIViewController, MKMapViewDelegate {
     
-    var locationPin: CLLocation?
+    @IBOutlet weak var mediaTextField: UITextField!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func sharePin(_ sender: Any) {
+        
+        if let mediaURL = mediaTextField.text{
+            Constants.myStudentData.mediaLink = mediaURL
+            
+            ParseClient.sharedInstance().postPinToMap() { (success, error) in
+                if success {
+                    let alert = UIAlertController(title: "Location Posted!",message: "You Have Successfully Posted Your Location and Link", preferredStyle: .alert)
+                    let finishPosting = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
+                        // Get 1st TextField's text
+                        self.navigationController!.popToRootViewController(animated: true)
+                    })
+                    alert.addAction(finishPosting)
+                    performUIUpdatesOnMain {
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    var locationPin: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
-        
         
     }
     //Func to pull current user data

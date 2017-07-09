@@ -321,6 +321,9 @@
                                     <constraint firstAttribute="width" constant="229" id="QTN-TQ-uQp"/>
                                 </constraints>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="sharePin:" destination="qqP-kd-Pfp" eventType="touchUpInside" id="ros-bz-e4k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -339,6 +342,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Ryw-6o-o1z" id="OYO-ml-kVZ"/>
+                        <outlet property="mediaTextField" destination="G5p-44-S0b" id="Tcm-eG-Qgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdx-Yh-ubd" userLabel="First Responder" sceneMemberID="firstResponder"/>
