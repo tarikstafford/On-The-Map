@@ -21,6 +21,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         loadData()
         
+        tableView.delegate = self
+
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
@@ -47,27 +49,6 @@ class TableViewController: UITableViewController {
         }
     }
     
-    func logOut() {
-        UdacityClient.sharedInstance().logOutFunc() { (success, results, error) in
-            
-            if success{
-                print("DELETE METHOD SUCCESSFUL")
-                Constants.SessionInfo.sessionID = ""
-                if Constants.SessionInfo.isFacebookLogin {
-                    
-                }
-                performUIUpdatesOnMain {
-                    print("PERFORMING UI UPDATES")
-                    self.dismiss(animated: true, completion: nil)
-                    let loginViewController = LoginViewController()
-                    self.present(loginViewController, animated: true, completion: nil)
-                }
-                
-            }
-        }
-    }
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -92,4 +73,14 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let object = studentDataArray[indexPath.row]
+        let toOpen = object.mediaURL
+        if let url = URL(string: toOpen){
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+
 }

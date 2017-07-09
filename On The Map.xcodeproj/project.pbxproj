@@ -23,6 +23,8 @@
 		F38CA9C71EE7D933003EF069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38CA9C51EE7D933003EF069 /* LaunchScreen.storyboard */; };
 		F38CA9D41EE7D9A6003EF069 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9D31EE7D9A6003EF069 /* Constants.swift */; };
 		F3C0202F1F112D6700FBDC19 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C0202E1F112D6700FBDC19 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		F3C020311F12265100FBDC19 /* NavBarFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C020301F12265100FBDC19 /* NavBarFunctions.swift */; };
+		F3C020331F122D4800FBDC19 /* PostPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C020321F122D4800FBDC19 /* PostPinViewController.swift */; };
 		F3C4E5E11EFFC309003FD85F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4E5E01EFFC309003FD85F /* TabBarController.swift */; };
 		F3D16BD41EF2E179004D498B /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16BD31EF2E179004D498B /* ParseClient.swift */; };
 		F3D16BD91EF2E268004D498B /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16BD81EF2E268004D498B /* UdacityClient.swift */; };
@@ -51,6 +53,8 @@
 		F38CA9D31EE7D9A6003EF069 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F3995F341F03F93A00D40C03 /* On The Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "On The Map.entitlements"; sourceTree = "<group>"; };
 		F3C0202E1F112D6700FBDC19 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F3C020301F12265100FBDC19 /* NavBarFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarFunctions.swift; sourceTree = "<group>"; };
+		F3C020321F122D4800FBDC19 /* PostPinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPinViewController.swift; sourceTree = "<group>"; };
 		F3C4E5E01EFFC309003FD85F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F3D16BD31EF2E179004D498B /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		F3D16BD81EF2E268004D498B /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
@@ -139,7 +143,8 @@
 				F3C4E5E01EFFC309003FD85F /* TabBarController.swift */,
 				F3299BE21F00185300AEB785 /* TableViewController.swift */,
 				F32DA69E1F063A0100B94515 /* MapViewController.swift */,
-				F3F96B711F112A1E00341580 /* PinAnnotation.swift */,
+				F3C020301F12265100FBDC19 /* NavBarFunctions.swift */,
+				F3C020321F122D4800FBDC19 /* PostPinViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */,
 				F38CA9D31EE7D9A6003EF069 /* Constants.swift */,
 				F36F695B1F0D2315004E8EDE /* StudentData.swift */,
+				F3F96B711F112A1E00341580 /* PinAnnotation.swift */,
 				F3D16BD71EF2E1EC004D498B /* Udacity API */,
 				F3D16BD61EF2E1E5004D498B /* Parse API */,
 			);
@@ -332,6 +338,7 @@
 				F32DA69F1F063A0100B94515 /* MapViewController.swift in Sources */,
 				F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */,
 				F36F69581F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift in Sources */,
+				F3C020311F12265100FBDC19 /* NavBarFunctions.swift in Sources */,
 				F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */,
 				F38CA9BF1EE7D933003EF069 /* LoginViewController.swift in Sources */,
 				F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */,
@@ -339,6 +346,7 @@
 				F3F96B721F112A1E00341580 /* PinAnnotation.swift in Sources */,
 				F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */,
 				F3C4E5E11EFFC309003FD85F /* TabBarController.swift in Sources */,
+				F3C020331F122D4800FBDC19 /* PostPinViewController.swift in Sources */,
 				F36F695C1F0D2315004E8EDE /* StudentData.swift in Sources */,
 				F3D16BD91EF2E268004D498B /* UdacityClient.swift in Sources */,
 				F36F695A1F0D0CD3004E8EDE /* LoginView.swift in Sources */,
