@@ -34,11 +34,7 @@ extension LoginViewController {
         }
         UdacityClient.sharedInstance().facebookLoginFunc() { (success, session, error) in
             if success {
-                performUIUpdatesOnMain {
-                    print("LOGGED IN")
-                    print(session ?? "none")
                     self.completeLogin()
-                }
             } else {
                 print("LOGIN FAILED")
             }

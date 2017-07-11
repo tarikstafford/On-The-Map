@@ -13,38 +13,36 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(createAnnotationArray(_:_:))
+        createAnnotationArray(StudentData.ArrayStudentData.sharedInstance)
+//        loadData(createAnnotationArray(_:_:))
         mapView.delegate = self
     }
     
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func refreshData(_ sender: Any) {
-        studentDataArray = []
-        annotationArray = []
-        loadData(createAnnotationArray(_:_:))
+        performUIUpdatesOnMain {
+            self.mapView.reloadInputViews()
+        }
     }
     
     @IBAction func postPin(_ sender: Any) {
         addYourPost()
     }
     
-    var studentDataArray = [StudentData]()
     var annotationArray = [MKAnnotation]()
-    var loadingData = false
-    var pageLoad = 0
     
-    func loadData(_ completionHandlerForLoadData: @escaping (_ result: [StudentData],_ error: String?) -> Void) {
-        ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
-            if success{
-                if let studentDataArray = arrayStudentData {
-                    completionHandlerForLoadData(studentDataArray,nil)
-                }
-            }
-        }
-    }
+//    func loadData(_ completionHandlerForLoadData: @escaping (_ result: [StudentData],_ error: String?) -> Void) {
+//        ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
+//            if success{
+//                if let studentDataArray = arrayStudentData {
+//                    completionHandlerForLoadData(studentDataArray,nil)
+//                }
+//            }
+//        }
+//    }
     
-    func createAnnotationArray(_ studentDataArray: [StudentData],_ error: String?) {
+    func createAnnotationArray(_ studentDataArray: [StudentData]) {
         for object in studentDataArray {
             
             let coordinate = CLLocationCoordinate2D(latitude: object.latitude, longitude: object.longitude)

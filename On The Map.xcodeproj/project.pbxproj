@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		98F93DE6F19A1C849EF45AC9 /* Pods_On_The_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */; };
+		F31AAC3D1F13C412003D7461 /* StudentDataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */; };
 		F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299BE21F00185300AEB785 /* TableViewController.swift */; };
 		F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */; };
 		F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533E1EFE953400600749 /* ConvenienceHandler.swift */; };
@@ -35,6 +36,7 @@
 		77A69B4E224299AEEA54BA95 /* Pods-On The Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.release.xcconfig"; sourceTree = "<group>"; };
 		86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_The_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90EA61BEBFEC306C1602761 /* Pods-On The Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.debug.xcconfig"; sourceTree = "<group>"; };
+		F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDataArray.swift; sourceTree = "<group>"; };
 		F3299BE21F00185300AEB785 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		F32C533E1EFE953400600749 /* ConvenienceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandler.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */,
 				F38CA9D31EE7D9A6003EF069 /* Constants.swift */,
 				F36F695B1F0D2315004E8EDE /* StudentData.swift */,
+				F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */,
 				F3F96B711F112A1E00341580 /* PinAnnotation.swift */,
 				F3D16BD71EF2E1EC004D498B /* Udacity API */,
 				F3D16BD61EF2E1E5004D498B /* Parse API */,
@@ -352,6 +355,7 @@
 				F3D16BD91EF2E268004D498B /* UdacityClient.swift in Sources */,
 				F3D16BD41EF2E179004D498B /* ParseClient.swift in Sources */,
 				F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */,
+				F31AAC3D1F13C412003D7461 /* StudentDataArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

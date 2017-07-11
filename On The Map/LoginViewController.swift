@@ -65,12 +65,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         }
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-        
-        view.addSubview(loginButton)
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 350)
+        loginButton.center = newCenter
         
         loginButton.delegate = self
         
+        self.view.addSubview(loginButton)
         
     }
     
@@ -84,9 +84,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     }
         
     func completeLogin(){
-
-        let controller = storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-        present(controller, animated: true, completion: nil)
+        
+        ParseClient.sharedInstance().populateTable(0) { (success, arrayStudentData, error) in
+            if success{
+                if let tempArray = arrayStudentData {
+                    StudentData.ArrayStudentData.sharedInstance = tempArray
+                    let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                    self.present(controller, animated: true, completion: nil)
+                }
+            } else {
+                // MARK: TODO - create alert view that data did not load.
+            }
+        }
     }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {

@@ -10,6 +10,10 @@ import Foundation
 
 struct StudentData {
     
+    struct ArrayStudentData {
+        static var sharedInstance = [StudentData]()
+    }
+    
     let createdAt: String
     let firstName: String
     let lastName: String

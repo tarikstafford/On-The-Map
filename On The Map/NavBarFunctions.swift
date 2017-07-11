@@ -36,10 +36,17 @@ extension UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    
-    
-    
-    
-    
+    func refreshStudentDataArray(_ completionHandlerForRefreshData: @escaping (_ success: Bool,_ error: String?) -> Void) {
+        
+        ParseClient.sharedInstance().populateTable(0) { (success, arrayStudentData, error) in
+            if success{
+                if let tempArray = arrayStudentData {
+                    StudentData.ArrayStudentData.sharedInstance = tempArray
+                    completionHandlerForRefreshData(true,nil)
+                }
+            } else {
+                completionHandlerForRefreshData(false, error)
+            }
+        }
+    }
 }

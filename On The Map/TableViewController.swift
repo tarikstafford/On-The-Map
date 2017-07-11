@@ -12,21 +12,28 @@ import FacebookCore
 
 class TableViewController: UITableViewController {
     
-    var studentDataArray = [StudentData]()
-    var loadingData = false
+    var studentDataArray = StudentData.ArrayStudentData.sharedInstance
     var pageLoad = 0
-
+    
     @IBAction func postPin(_ sender: Any) {
         addYourPost()
     }
     @IBAction func refreshData(_ sender: Any) {
-        studentDataArray = []
-        loadData()
+        refreshStudentDataArray() {(success, error) in
+            if success {
+                performUIUpdatesOnMain {
+                    self.studentDataArray = StudentData.ArrayStudentData.sharedInstance
+                    self.tableView?.reloadData()
+                }
+            } else {
+                print(error ?? "Error Refreshing Data")
+                //MARK: TODO - add in alertview controller msg.
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         
         tableView.delegate = self
 
@@ -40,21 +47,6 @@ class TableViewController: UITableViewController {
             logOut()
         }
     }
-
-    func loadData() {
-        ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
-            if success{
-                if let tempArray = arrayStudentData {
-                    self.studentDataArray = self.studentDataArray + tempArray
-                    performUIUpdatesOnMain {
-                        self.tableView?.reloadData()
-                    }
-                    self.loadingData = false
-                    self.pageLoad = self.pageLoad + 100
-                }
-            }
-        }
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -65,11 +57,6 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let lastElement = studentDataArray.count - 1
-        if !loadingData && indexPath.row == lastElement {
-            loadingData = true
-            loadData()
-        }
         
         let object = studentDataArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)

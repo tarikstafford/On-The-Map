@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-9p-lFU">
-                                <rect key="frame" x="63" y="269" width="249" height="30"/>
+                                <rect key="frame" x="63" y="318.5" width="249" height="30"/>
                                 <color key="backgroundColor" red="0.78941017670000002" green="0.78941017670000002" blue="0.78941017670000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="b8R-8o-asc"/>
@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqe-0x-7RT">
-                                <rect key="frame" x="63" y="307" width="249" height="30"/>
+                                <rect key="frame" x="63" y="356.5" width="249" height="30"/>
                                 <color key="backgroundColor" red="0.78941017670000002" green="0.78941017670000002" blue="0.78941017670000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="AXE-Ro-nAL"/>
@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5z-nE-203">
-                                <rect key="frame" x="63" y="359" width="249" height="30"/>
+                                <rect key="frame" x="63" y="408.5" width="249" height="30"/>
                                 <color key="backgroundColor" red="0.78941017670000002" green="0.78941017670000002" blue="0.78941017670000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dcc-UE-U6Q"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngu-6L-BMl">
-                                <rect key="frame" x="76" y="397" width="223" height="30"/>
+                                <rect key="frame" x="76" y="446.5" width="223" height="30"/>
                                 <state key="normal" title="Dont' have an account? Sign Up!">
                                     <color key="titleColor" red="0.99073134273952757" green="1" blue="0.96473857928024109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -74,17 +74,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.63674345561624324" blue="0.27951747315569364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rgx-9p-lFU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0hw-GB-zth"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ngu-6L-BMl" secondAttribute="trailing" constant="60" id="6K3-Tj-TBT"/>
                             <constraint firstItem="Ngu-6L-BMl" firstAttribute="top" secondItem="Q5z-nE-203" secondAttribute="bottom" constant="8" id="F5d-DW-RMp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q5z-nE-203" secondAttribute="trailing" constant="47" id="JXB-Rq-WhN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ngu-6L-BMl" secondAttribute="bottom" constant="240" id="LAH-t3-Z5u"/>
                             <constraint firstItem="zqe-0x-7RT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="LaJ-IE-yD9"/>
                             <constraint firstItem="Q5z-nE-203" firstAttribute="top" secondItem="zqe-0x-7RT" secondAttribute="bottom" constant="22" id="M9y-Uc-h1C"/>
-                            <constraint firstItem="Rgx-9p-lFU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="249" id="Ptr-K6-C0s"/>
                             <constraint firstItem="Q5z-nE-203" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="Uht-o8-VyT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rgx-9p-lFU" secondAttribute="trailing" constant="47" id="bmd-CO-U4M"/>
                             <constraint firstItem="zqe-0x-7RT" firstAttribute="top" secondItem="Rgx-9p-lFU" secondAttribute="bottom" constant="8" id="eax-QB-GD8"/>
                             <constraint firstItem="Rgx-9p-lFU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="hYB-Xc-3dX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ngu-6L-BMl" secondAttribute="bottom" constant="190.5" id="leD-Wv-piP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zqe-0x-7RT" secondAttribute="trailing" constant="47" id="nGn-2U-7bk"/>
                             <constraint firstItem="Ngu-6L-BMl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="pFa-za-9I1"/>
                         </constraints>
