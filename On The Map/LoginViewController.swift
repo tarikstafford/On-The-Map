@@ -51,7 +51,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                         print("LOGIN FAILED")
                     }
                 }
+            } else {
+                
             }
+        } else {
+            
         }
     }
     

@@ -79,10 +79,4 @@ class ShareLocationViewController: UIViewController, MKMapViewDelegate {
         
         return myPin
     }
-    
-    
-    
-    
-    
-    
 }

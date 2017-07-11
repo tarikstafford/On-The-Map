@@ -24,10 +24,10 @@ class TableViewController: UITableViewController {
                 performUIUpdatesOnMain {
                     self.studentDataArray = StudentData.ArrayStudentData.sharedInstance
                     self.tableView?.reloadData()
+                    self.refreshDataAlert()
                 }
             } else {
-                print(error ?? "Error Refreshing Data")
-                //MARK: TODO - add in alertview controller msg.
+                self.failedAlert("Refresh Data Error!", error ?? "Error Refreshing Data")
             }
         }
     }

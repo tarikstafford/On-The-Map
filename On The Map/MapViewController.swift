@@ -11,36 +11,34 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
+    var annotationArray = [MKAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createAnnotationArray(StudentData.ArrayStudentData.sharedInstance)
-//        loadData(createAnnotationArray(_:_:))
         mapView.delegate = self
     }
     
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func refreshData(_ sender: Any) {
-        performUIUpdatesOnMain {
-            self.mapView.reloadInputViews()
+        annotationArray = []
+        refreshStudentDataArray() { (success, error) in
+            if success{
+                self.createAnnotationArray(StudentData.ArrayStudentData.sharedInstance)
+                performUIUpdatesOnMain {
+                    self.mapView.reloadInputViews()
+                    self.refreshDataAlert()
+                }
+            } else {
+                self.failedAlert("Refresh Data Error!", error ?? "Error Refreshing Data")
+            }
         }
     }
     
     @IBAction func postPin(_ sender: Any) {
         addYourPost()
     }
-    
-    var annotationArray = [MKAnnotation]()
-    
-//    func loadData(_ completionHandlerForLoadData: @escaping (_ result: [StudentData],_ error: String?) -> Void) {
-//        ParseClient.sharedInstance().populateTable(pageLoad) { (success, arrayStudentData, error) in
-//            if success{
-//                if let studentDataArray = arrayStudentData {
-//                    completionHandlerForLoadData(studentDataArray,nil)
-//                }
-//            }
-//        }
-//    }
     
     func createAnnotationArray(_ studentDataArray: [StudentData]) {
         for object in studentDataArray {

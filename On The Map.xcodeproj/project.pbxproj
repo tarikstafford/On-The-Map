@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		98F93DE6F19A1C849EF45AC9 /* Pods_On_The_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */; };
-		F31AAC3D1F13C412003D7461 /* StudentDataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */; };
 		F3299BE31F00185300AEB785 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3299BE21F00185300AEB785 /* TableViewController.swift */; };
 		F32C533D1EFE7AE300600749 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */; };
 		F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C533E1EFE953400600749 /* ConvenienceHandler.swift */; };
 		F32D14391F02A41400CADA7C /* FacebookLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */; };
 		F32DA69F1F063A0100B94515 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32DA69E1F063A0100B94515 /* MapViewController.swift */; };
+		F36AC78C1F14E16400211CDC /* AlertFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36AC78B1F14E16400211CDC /* AlertFunctions.swift */; };
 		F36F69581F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F69571F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift */; };
 		F36F695C1F0D2315004E8EDE /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F695B1F0D2315004E8EDE /* StudentData.swift */; };
 		F38CA9BD1EE7D933003EF069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CA9BC1EE7D933003EF069 /* AppDelegate.swift */; };
@@ -36,12 +36,12 @@
 		77A69B4E224299AEEA54BA95 /* Pods-On The Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.release.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.release.xcconfig"; sourceTree = "<group>"; };
 		86273D31DDF24D822C1E3E91 /* Pods_On_The_Map.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_The_Map.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90EA61BEBFEC306C1602761 /* Pods-On The Map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On The Map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On The Map/Pods-On The Map.debug.xcconfig"; sourceTree = "<group>"; };
-		F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDataArray.swift; sourceTree = "<group>"; };
 		F3299BE21F00185300AEB785 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		F32C533E1EFE953400600749 /* ConvenienceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandler.swift; sourceTree = "<group>"; };
 		F32D14381F02A41400CADA7C /* FacebookLoginExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginExtension.swift; sourceTree = "<group>"; };
 		F32DA69E1F063A0100B94515 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F36AC78B1F14E16400211CDC /* AlertFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFunctions.swift; sourceTree = "<group>"; };
 		F36F69571F0D0BFD004E8EDE /* ConvenienceHandlerParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceHandlerParse.swift; sourceTree = "<group>"; };
 		F36F695B1F0D2315004E8EDE /* StudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		F38CA9B91EE7D933003EF069 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,9 +145,10 @@
 				F3C4E5E01EFFC309003FD85F /* TabBarController.swift */,
 				F3299BE21F00185300AEB785 /* TableViewController.swift */,
 				F32DA69E1F063A0100B94515 /* MapViewController.swift */,
-				F3C020301F12265100FBDC19 /* NavBarFunctions.swift */,
 				F3C020321F122D4800FBDC19 /* PostPinViewController.swift */,
 				F3C020341F123A7E00FBDC19 /* ShareLocationViewController.swift */,
+				F3C020301F12265100FBDC19 /* NavBarFunctions.swift */,
+				F36AC78B1F14E16400211CDC /* AlertFunctions.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -180,7 +181,6 @@
 				F32C533C1EFE7AE300600749 /* GCDBlackBox.swift */,
 				F38CA9D31EE7D9A6003EF069 /* Constants.swift */,
 				F36F695B1F0D2315004E8EDE /* StudentData.swift */,
-				F31AAC3C1F13C411003D7461 /* StudentDataArray.swift */,
 				F3F96B711F112A1E00341580 /* PinAnnotation.swift */,
 				F3D16BD71EF2E1EC004D498B /* Udacity API */,
 				F3D16BD61EF2E1E5004D498B /* Parse API */,
@@ -354,8 +354,8 @@
 				F36F695C1F0D2315004E8EDE /* StudentData.swift in Sources */,
 				F3D16BD91EF2E268004D498B /* UdacityClient.swift in Sources */,
 				F3D16BD41EF2E179004D498B /* ParseClient.swift in Sources */,
+				F36AC78C1F14E16400211CDC /* AlertFunctions.swift in Sources */,
 				F32C533F1EFE953400600749 /* ConvenienceHandler.swift in Sources */,
-				F31AAC3D1F13C412003D7461 /* StudentDataArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

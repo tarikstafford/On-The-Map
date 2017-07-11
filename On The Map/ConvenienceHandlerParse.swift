@@ -15,8 +15,7 @@ extension ParseClient {
         let _ = taskForGetMethod(skip) { (results, error) in
             
             if error != nil {
-                print(error!)
-                completionHandlerForPopulateTable(false, nil, "Login Failed.")
+                completionHandlerForPopulateTable(false, nil, "Server Error")
             } else if let results = results {
                 //Check Acct Info
                 
@@ -32,7 +31,7 @@ extension ParseClient {
                     }
                     
                 } else {
-                    print("There is an problem with Parse Results, no array found")
+                    completionHandlerForPopulateTable(false,nil,"Could Not Retrieve Student Data")
                 }
                 print(arrayStudentData)
                 completionHandlerForPopulateTable(true, arrayStudentData, nil)
