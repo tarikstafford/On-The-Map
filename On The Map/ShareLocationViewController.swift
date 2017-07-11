@@ -10,11 +10,28 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ShareLocationViewController: UIViewController, MKMapViewDelegate {
+class ShareLocationViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var mediaTextField: UITextField!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchUserData()
+        mediaTextField.delegate = self
+    }
+    
+    @IBAction func cancelPostLoc(_ sender: Any) {
+        dismissVC()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
     
     @IBAction func sharePin(_ sender: Any) {
         
@@ -40,11 +57,6 @@ class ShareLocationViewController: UIViewController, MKMapViewDelegate {
     }
     var locationPin: CLLocation?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchUserData()
-        
-    }
     //Func to pull current user data
     func fetchUserData(){
         UdacityClient.sharedInstance().fetchUserData() { (success, error) in

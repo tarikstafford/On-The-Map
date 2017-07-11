@@ -33,7 +33,7 @@ extension UIViewController {
     func addYourPost(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PostPin") as! PostPinViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.present(vc, animated: true)
     }
     
     func refreshStudentDataArray(_ completionHandlerForRefreshData: @escaping (_ success: Bool,_ error: String?) -> Void) {
@@ -50,6 +50,9 @@ extension UIViewController {
         }
     }
     
+    func dismissVC(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
 }

@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         }
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 350)
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 70)
         loginButton.center = newCenter
         
         loginButton.delegate = self

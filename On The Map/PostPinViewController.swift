@@ -9,13 +9,27 @@
 import UIKit
 import CoreLocation
 
-class PostPinViewController: UIViewController {
+class PostPinViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var questionLabel: UILabel!
     
+    @IBAction func cancelPostLoc(_ sender: Any) {
+        dismissVC()
+    }
     @IBOutlet weak var locationTextField: UITextField!
     
     let activityIndicator = UIActivityIndicatorView()
+    
+    override func viewDidLoad() {
+         super.viewDidLoad()
+        locationTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
     
     @IBAction func findLocationButton(_ sender: Any) {
         
@@ -48,15 +62,10 @@ class PostPinViewController: UIViewController {
                 let vc = storyboard.instantiateViewController(withIdentifier: "ShareLocation") as! ShareLocationViewController
                 vc.locationPin = location
                 
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
             }
         }
         
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
 }
