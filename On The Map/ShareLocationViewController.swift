@@ -61,7 +61,7 @@ class ShareLocationViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    //Conver CLLocation type to Coordinates for mapkit and add coordinates to myStudentData for ParseClient
+    //Convert CLLocation type to Coordinates for mapkit and add coordinates to myStudentData for ParseClient
     func createAnnotation() -> PinAnnotation? {
         
         guard let locationUnwrapped = locationPin else {

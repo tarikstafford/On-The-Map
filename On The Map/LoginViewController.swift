@@ -52,10 +52,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                     }
                 }
             } else {
-                
+                failedAlert("Password is Empty!", "Please enter a proper password.")
             }
         } else {
-            
+            failedAlert("Invalid Email!", "Please Enter a Proper Email Address.")
         }
     }
     
@@ -97,7 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                     self.present(controller, animated: true, completion: nil)
                 }
             } else {
-                // MARK: TODO - create alert view that data did not load.
+                self.failedAlert("Login Failed!", "Could not login please try again!")
             }
         }
     }

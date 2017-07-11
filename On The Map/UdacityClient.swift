@@ -25,21 +25,27 @@ class UdacityClient: NSObject {
         request.httpBody = "{\"udacity\": {\"username\": \"\(Constants.LoginInformation.username)\", \"password\": \"\(Constants.LoginInformation.password)\"}}".data(using: String.Encoding.utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForPostMethod(nil, NSError(domain: "taskForPostMethod", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
-                print("POST request error type: \(String(describing: error))")
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
             
-            guard let data = data else{
-                print("Data error")
+            guard let data = data else {
+                sendError("No data was returned by the request!")
                 return
             }
-            
             
             let range = Range(5..<data.count)
             let newData = data.subdata(in: range) /* subset response data! */
@@ -69,18 +75,25 @@ class UdacityClient: NSObject {
         }
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForDeleteMethod(nil, NSError(domain: "taskForDeleteMethod", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
-                print("DELETE request error type: \(String(describing: error))")
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
             
-            guard let data = data else{
-                print("Data error")
+            guard let data = data else {
+                sendError("No data was returned by the request!")
                 return
             }
 
@@ -99,21 +112,27 @@ class UdacityClient: NSObject {
         let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/users/\(Constants.LoginInformation.uniqueKey)")!)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForGetMethod(nil, NSError(domain: "taskForGetMethod", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
-                print("GET request error type: \(String(describing: error))")
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
             
-            guard let data = data else{
-                print("Data error")
+            guard let data = data else {
+                sendError("No data was returned by the request!")
                 return
             }
-            
             let range = Range(5..<data.count)
             let newData = data.subdata(in: range) /* subset response data! */
             print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
@@ -135,20 +154,28 @@ class UdacityClient: NSObject {
         request.httpBody = "{\"facebook_mobile\": {\"access_token\": \"\(Constants.SessionInfo.facebookToken);\"}}".data(using: String.Encoding.utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForFacebookPostMethod(nil, NSError(domain: "taskForPostFacebookSession", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
-                print("Facebook Udacity Post Method Error")
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
             
-            guard let data = data else{
-                print("Data error")
+            guard let data = data else {
+                sendError("No data was returned by the request!")
                 return
             }
+
         let range = Range(5..<data.count)
         let newData = data.subdata(in: range) /* subset response data! */
         print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)

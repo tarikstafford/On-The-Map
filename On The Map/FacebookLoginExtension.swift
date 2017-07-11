@@ -14,12 +14,11 @@ extension LoginViewController {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result {
         case .success(grantedPermissions: _, declinedPermissions: _, token: _):
-            print("logged in")
             facebookAuth()
         case .failed:
-            print("Failed Login")
+            self.failedAlert("Failed Facebook Login!", "Please Try Again.")
         case .cancelled:
-            print("Cancelled")
+            self.failedAlert("Cancelled Facebook Login!", "Please Try Again")
         }
     }
     
@@ -34,9 +33,9 @@ extension LoginViewController {
         }
         UdacityClient.sharedInstance().facebookLoginFunc() { (success, session, error) in
             if success {
-                    self.completeLogin()
+                self.completeLogin()
             } else {
-                print("LOGIN FAILED")
+                self.failedAlert("Facebook Login Failed", "Please Try Again.")
             }
         }
     }

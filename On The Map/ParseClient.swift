@@ -24,19 +24,27 @@ class ParseClient: NSObject {
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
 
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionForGetMethod(nil, NSError(domain: "taskForGetMethod", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
             
             print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!)
             
             guard let data = data else {
-                print("data error get PARSE api")
+                sendError("No data was returned by the request!")
                 return
             }
             
@@ -57,22 +65,29 @@ class ParseClient: NSObject {
         request.httpBody = "{\"uniqueKey\": \"\(Constants.LoginInformation.uniqueKey)\", \"firstName\": \"\(Constants.myStudentData.firstName)\", \"\(Constants.myStudentData.secondName)\": \"Doe\",\"mapString\": \"\(Constants.myStudentData.mapString)\", \"mediaURL\": \"\(Constants.myStudentData.mediaLink)\",\"latitude\": \(Constants.myStudentData.latitude), \"longitude\": \(Constants.myStudentData.longitude)}".data(using: String.Encoding.utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
+           
+            
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionForPostMethod(nil, NSError(domain: "taskForPostMethod", code: 1, userInfo: userInfo))
+            }
+            
             if error != nil {
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                sendError("Your request returned a status code other than 2xx!")
                 return
             }
-            
             
             guard let data = data else {
-                print("data error get PARSE api")
+                sendError("No data was returned by the request!")
                 return
             }
-            
-            print(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
             
             self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionForPostMethod)
         }

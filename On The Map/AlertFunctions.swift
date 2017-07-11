@@ -21,14 +21,6 @@ extension UIViewController {
         
     }
     
-    func loginFailed(){
-        let alert = UIAlertController(title: "Login Failed!",message: "Please Try Again.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-        performUIUpdatesOnMain {
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
     func failedAlert(_ title: String,_ message: String){
         let alert = UIAlertController(title: title ,message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
