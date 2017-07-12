@@ -27,7 +27,9 @@ class TableViewController: UITableViewController {
                     self.refreshDataAlert()
                 }
             } else {
-                self.failedAlert("Refresh Data Error!", error ?? "Error Refreshing Data")
+                performUIUpdatesOnMain {
+                    self.failedAlert("Refresh Data Error!", error ?? "Error Refreshing Data")
+                }
             }
         }
     }

@@ -48,14 +48,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                             self.completeLogin()
                         }
                     } else {
-                        print("LOGIN FAILED")
-                    }
+                        performUIUpdatesOnMain {
+                            self.failedAlert("Login Failed!", "Please try again.")
+                        }
+                                            }
                 }
             } else {
-                failedAlert("Password is Empty!", "Please enter a proper password.")
+                performUIUpdatesOnMain {
+                    self.failedAlert("Password is Empty!", "Please enter a proper password.")
+                }
             }
         } else {
-            failedAlert("Invalid Email!", "Please Enter a Proper Email Address.")
+            performUIUpdatesOnMain{
+                self.failedAlert("Invalid Email!", "Please Enter a Proper Email Address.")
+            }
         }
     }
     
@@ -65,6 +71,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         session = URLSession.shared
         
         if (AccessToken.current != nil) {
+            usernameField.isEnabled = false
+            passwordField.isEnabled = false
+            
             facebookAuth()
         }
         
@@ -97,7 +106,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                     self.present(controller, animated: true, completion: nil)
                 }
             } else {
-                self.failedAlert("Login Failed!", "Could not login please try again!")
+                performUIUpdatesOnMain {
+                    self.failedAlert("Login Failed!", "Could not login please try again!")
+                }
             }
         }
     }
