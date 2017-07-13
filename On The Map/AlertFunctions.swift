@@ -28,4 +28,26 @@ extension UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func alertWithFullDismiss(_ title: String,_ message: String){
+        
+        let alert = UIAlertController(title: title,message: message , preferredStyle: .alert)
+        let finishPosting = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
+            // Get 1st TextField's text
+            let presentingViewController = self.presentingViewController
+            self.dismiss(animated: false, completion: {
+                presentingViewController!.dismiss(animated: true, completion: {})
+            })
+        })
+        alert.addAction(finishPosting)
+        performUIUpdatesOnMain {
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
 }
+
+
+
+

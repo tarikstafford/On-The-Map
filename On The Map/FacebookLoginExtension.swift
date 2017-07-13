@@ -27,6 +27,11 @@ extension LoginViewController {
     }
     
     func facebookAuth(){
+        performUIUpdatesOnMain {
+            self.activityIndicator.startAnimating()
+            self.textFieldsToggle(false)
+        }
+        
         if let accessToken = AccessToken.current {
             Constants.SessionInfo.facebookToken = accessToken.authenticationToken
             Constants.LoginInformation.facebookName = accessToken.userId
@@ -36,6 +41,10 @@ extension LoginViewController {
                 self.completeLogin()
             } else {
                 self.failedAlert("Facebook Login Failed", "Please Try Again.")
+                performUIUpdatesOnMain {
+                    self.activityIndicator.startAnimating()
+                    self.textFieldsToggle(true)
+                }
             }
         }
     }

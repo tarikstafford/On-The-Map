@@ -27,12 +27,12 @@ struct StudentData {
     
     init(json: [String:AnyObject?]) {
         createdAt = json["createdAt"] as? String ?? ""
-        firstName = json["firstName"] as? String ?? ""
-        lastName = json["lastName"] as? String ?? ""
+        firstName = json["firstName"] as? String ?? "Roger"
+        lastName = json["lastName"] as? String ?? "Federer"
         latitude = json["latitude"] as? Double ?? 28.2011
         longitude = json["longitude"] as? Double ?? 83.9451
         mapString = json["mapString"] as? String ?? ""
-        mediaURL = json["mediaURL"] as? String ?? ""
+        mediaURL = json["mediaURL"] as? String ?? "Is A God"
         objectId = json["objectId"] as? String ?? ""
         uniqueKey = json["uniqueKey"] as? String ?? ""
         updatedAt = json["updatedAt"] as? String ?? ""

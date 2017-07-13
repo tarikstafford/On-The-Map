@@ -19,6 +19,7 @@ class ShareLocationViewController: UIViewController, MKMapViewDelegate, UITextFi
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
+        mediaTextField.clearsOnBeginEditing = true
         mediaTextField.delegate = self
     }
     
@@ -40,15 +41,9 @@ class ShareLocationViewController: UIViewController, MKMapViewDelegate, UITextFi
             
             ParseClient.sharedInstance().postPinToMap() { (success, error) in
                 if success {
-                    let alert = UIAlertController(title: "Location Posted!",message: "You Have Successfully Posted Your Location and Link", preferredStyle: .alert)
-                    let finishPosting = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
-                        // Get 1st TextField's text
-                        self.navigationController!.popToRootViewController(animated: true)
-                    })
-                    alert.addAction(finishPosting)
-                    performUIUpdatesOnMain {
-                        self.present(alert, animated: true, completion: nil)
-                    }
+                    self.alertWithFullDismiss("Location Posted", "Successfully posted a location!")
+                } else {
+                    self.alertWithFullDismiss("Location Not Posted", "Check your internet connection!")
                 }
             }
             

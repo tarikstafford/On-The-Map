@@ -82,6 +82,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 let url = URL(string: toOpen)!
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    failedAlert("Invalid URL", "The URL can not be opened.")
                 }
             }
         }

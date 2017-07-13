@@ -71,10 +71,15 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let object = studentDataArray[indexPath.row]
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let toOpen = object.mediaURL
         if let url = URL(string: toOpen){
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                failedAlert("Invalid URL", "The URL can not be opened.")
             }
         }
     }

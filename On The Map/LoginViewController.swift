@@ -21,6 +21,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     
     @IBOutlet weak var loginButton: UIButton!
     
+    let activityIndicator = UIActivityIndicatorView()
+    
     @IBAction func signUpButton(_ sender: Any) {
         let url = URL(string: "https://www.udacity.com/account/auth#!/signup")
         if UIApplication.shared.canOpenURL(url!) {
@@ -29,6 +31,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+
         guard let username = usernameField.text else{
             return
         }
@@ -41,26 +44,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
             if password.isEmpty == false {
                 Constants.LoginInformation.username = username
                 Constants.LoginInformation.password = password
+                self.activityIndicator.startAnimating()
+                textFieldsToggle(false)
                 UdacityClient.sharedInstance().loginFunc() { (success, sessionID, errorString) in
                     if success {
+                        
                         performUIUpdatesOnMain {
                             print(sessionID ?? "none")
                             self.completeLogin()
                         }
                     } else {
                         performUIUpdatesOnMain {
-                            self.failedAlert("Login Failed!", "Please try again.")
+                            self.failedAlert("Login Failed!", "Please check your internet connection and try again.")
+                            self.textFieldsToggle(true)
                         }
                                             }
                 }
             } else {
                 performUIUpdatesOnMain {
                     self.failedAlert("Password is Empty!", "Please enter a proper password.")
+                    self.textFieldsToggle(true)
                 }
             }
         } else {
             performUIUpdatesOnMain{
                 self.failedAlert("Invalid Email!", "Please Enter a Proper Email Address.")
+                self.textFieldsToggle(true)
             }
         }
     }
@@ -70,10 +79,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         
         session = URLSession.shared
         
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
+        applySettingsActivityIndicator(activityIndicator)
+        
         if (AccessToken.current != nil) {
-            usernameField.isEnabled = false
-            passwordField.isEnabled = false
-            
             facebookAuth()
         }
         
@@ -89,6 +100,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.textFieldsToggle(true)
         
         usernameField.clearsOnBeginEditing = true
         passwordField.clearsOnBeginEditing = true
@@ -98,8 +110,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         
     func completeLogin(){
         
+        
         ParseClient.sharedInstance().populateTable(0) { (success, arrayStudentData, error) in
             if success{
+                performUIUpdatesOnMain {
+                    self.activityIndicator.stopAnimating()
+                }
                 if let tempArray = arrayStudentData {
                     StudentData.ArrayStudentData.sharedInstance = tempArray
                     let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
@@ -107,7 +123,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                 }
             } else {
                 performUIUpdatesOnMain {
-                    self.failedAlert("Login Failed!", "Could not login please try again!")
+                    self.failedAlert("Student Locations Error.", "Could not retrieve locations.")
+                    self.activityIndicator.stopAnimating()
+                    self.textFieldsToggle(true)
+                    
                 }
             }
         }
@@ -140,6 +159,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
         textField.resignFirstResponder()
         loginPressed((Any).self)
         return true
+    }
+    
+    func textFieldsToggle(_ on: Bool){
+        usernameField.isEnabled = on
+        passwordField.isEnabled = on
     }
 }
 

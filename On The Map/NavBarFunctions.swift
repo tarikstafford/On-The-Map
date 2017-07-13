@@ -14,16 +14,12 @@ extension UIViewController {
         UdacityClient.sharedInstance().logOutFunc() { (success, results, error) in
             
             if success{
-                print("DELETE METHOD SUCCESSFUL")
                 Constants.SessionInfo.sessionID = ""
                 if Constants.SessionInfo.isFacebookLogin {
                     
                 }
                 performUIUpdatesOnMain {
-                    print("PERFORMING UI UPDATES")
                     self.dismiss(animated: true, completion: nil)
-                    let loginViewController = LoginViewController()
-                    self.present(loginViewController, animated: true, completion: nil)
                 }
                 
             }
@@ -53,6 +49,16 @@ extension UIViewController {
     func dismissVC(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func applySettingsActivityIndicator(_ activityIndicator: UIActivityIndicatorView) {
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        self.view.addSubview(activityIndicator)
+        
+    }
+    
     
 
 }

@@ -33,10 +33,7 @@ class PostPinViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func findLocationButton(_ sender: Any) {
         
-        self.activityIndicator.center = self.view.center
-        self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
+        applySettingsActivityIndicator(activityIndicator)
         self.activityIndicator.startAnimating()
         
         guard let address = locationTextField.text else {
