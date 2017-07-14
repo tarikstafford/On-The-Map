@@ -50,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                     if success {
                         
                         performUIUpdatesOnMain {
-                            print(sessionID ?? "none")
                             self.completeLogin()
                         }
                     } else {
@@ -58,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                             self.failedAlert("Login Failed!", "Please check your internet connection and try again.")
                             self.textFieldsToggle(true)
                         }
-                                            }
+                    }
                 }
             } else {
                 performUIUpdatesOnMain {

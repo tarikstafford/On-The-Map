@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" id="hmo-P4-im0">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="nN8-uk-lPH">
                             <connections>
-                                <action selector="logOutPressed:" destination="r0T-yj-BEZ" id="jbD-kj-ODT"/>
+                                <action selector="logoutButton:" destination="3gk-ew-qrM" id="90j-nq-M5g"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>

@@ -8,6 +8,8 @@
 
 import Foundation
 import MapKit
+import FacebookCore
+import FacebookLogin
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
@@ -17,6 +19,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         createAnnotationArray(StudentData.ArrayStudentData.sharedInstance)
         mapView.delegate = self
+    }
+    @IBAction func logoutButton(_ sender: Any) {
+        if AccessToken.current != nil {
+            LoginManager().logOut()
+            logOut()
+        } else {
+            logOut()
+        }
     }
     
     @IBOutlet weak var mapView: MKMapView!
@@ -45,7 +55,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             let coordinate = CLLocationCoordinate2D(latitude: object.latitude, longitude: object.longitude)
             
-            let pin = PinAnnotation(title: object.firstName , subtitle: object.mediaURL, coordinate: coordinate)
+            let pin = PinAnnotation(title: ("\(object.firstName) \(object.lastName)") , subtitle: object.mediaURL, coordinate: coordinate)
             
             annotationArray.append(pin)
             
