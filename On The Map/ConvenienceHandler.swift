@@ -17,7 +17,7 @@ extension UdacityClient {
             
             if let error = error {
                 print(error)
-                completionHandlerForLogin(false, nil, "Login Failed.")
+                completionHandlerForLogin(false, nil, error.localizedDescription)
             } else if let results = results {
                 //Check Acct Info
                 guard let account = results["account"] as? [String:AnyObject] else {

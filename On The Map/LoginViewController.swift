@@ -54,8 +54,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, LoginButtonDel
                         }
                     } else {
                         performUIUpdatesOnMain {
-                            self.failedAlert("Login Failed!", "Please check your internet connection and try again.")
+                            self.failedAlert("Login Failed!", "\(errorString ?? "")")
                             self.textFieldsToggle(true)
+                            self.activityIndicator.stopAnimating()
                         }
                     }
                 }
